@@ -7,3 +7,4 @@ export function load(){try{const text=localStorage.getItem(KEY)||localStorage.ge
 export function save(s){try{localStorage.setItem(KEY,JSON.stringify({...s,lastTick:Date.now()}));return true}catch(e){console.warn('Автосохранение недоступно',e);return false}}
 export function exportSave(s){const blob=new Blob([JSON.stringify({...s,lastTick:Date.now()},null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='pixelpal-backup.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
 export async function importSave(file){return validate(JSON.parse(await file.text()))}
+
