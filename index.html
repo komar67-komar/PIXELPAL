@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#17243b"><meta name="description" content="PIXELPAL — уютный пиксельный мир, где растёт твой питомец.">
+  <title>PIXELPAL — мой маленький мир</title><link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar"><a class="brand" href="#"><span class="brand-mark">P</span><span>PIXEL<span class="brand-pink">PAL</span><small>МОЙ МАЛЕНЬКИЙ МИР</small></span></a><div class="top-status"><span class="weather" id="world-time">☀ ДЕНЬ</span><span class="coin-pill"><span class="coin-icon">✦</span><b id="coins">0</b></span><button class="icon-button" id="settings-btn" aria-label="Настройки">⚙</button></div></header>
+    <main>
+      <section class="game-layout">
+        <div class="room-card"><div class="room-top"><div><span class="eyebrow">ТВОЯ КОМНАТА</span><h1 id="pet-title">Мой питомец</h1></div><button class="room-switch" id="room-btn">⌂ <span id="room-name">Уютная комната</span> ▾</button></div>
+          <div class="scene-wrap"><canvas id="scene" aria-label="Пиксельная комната с питомцем"></canvas><div class="scene-hint" id="scene-hint">ПОГЛАДЬ МЕНЯ! ♡</div><div class="scene-controls"><button id="decor-btn" title="Режим расстановки">▦</button><button id="lights-btn" title="Свет">☼</button></div></div>
+          <div class="pet-footer"><div class="pet-avatar" id="pet-avatar">✦</div><div class="pet-info"><b id="pet-name">Пиксель</b><span id="pet-subtitle">Малыш · уровень 1</span></div><button class="rename-btn" id="rename-btn">✎ ИМЯ</button><div class="xp-wrap"><span>ОПЫТ <b id="xp-label">0/100</b></span><div class="xp-track"><i id="xp-bar"></i></div></div></div>
+        </div>
+        <aside class="needs-card"><div class="section-heading"><div><span class="eyebrow">ВСЁ ХОРОШО?</span><h2>Настроение</h2></div><span class="mood-face" id="mood-face">◕‿◕</span></div><div class="needs-list" id="needs"></div><div class="care-actions"><button class="care-button food" data-action="feed"><span class="care-icon">◈</span><span><b>Покормить</b><small>Вкусняшка ждёт</small></span><kbd>1 ✦</kbd></button><button class="care-button play" data-action="play"><span class="care-icon">✿</span><span><b>Поиграть</b><small>Пора повеселиться</small></span></button><button class="care-button bath" data-action="bath"><span class="care-icon">▤</span><span><b>Искупать</b><small>Станет чище</small></span></button><button class="care-button walk" data-action="walk"><span class="care-icon">➜</span><span><b>На прогулку</b><small>Свежий воздух</small></span></button><button class="care-button sleep" data-action="sleep"><span class="care-icon">☾</span><span><b id="sleep-label">Уложить спать</b><small>Сладких снов!</small></span></button></div><div class="status-note" id="status-note">Пиксель рад тебя видеть ♡</div></aside>
+      </section>
+      <section class="lower-grid"><article class="panel quests-panel"><div class="section-heading"><div><span class="eyebrow">МАЛЕНЬКИЕ ЦЕЛИ</span><h2>Задания на сегодня</h2></div><span class="day-badge" id="day-label">ДЕНЬ 1</span></div><div class="quest-list" id="quests"></div><button class="text-link" id="all-quests">Все достижения →</button></article>
+        <article class="panel quick-panel"><div class="section-heading"><div><span class="eyebrow">ЧЕМ ЗАЙМЁМСЯ?</span><h2>Островки веселья</h2></div><span class="sparkle">✦</span></div><div class="minigames" id="minigames"></div></article>
+        <article class="panel shop-panel"><div class="section-heading"><div><span class="eyebrow">ЧТО-ТО МИЛОЕ</span><h2>Лавка Пикси</h2></div><button class="text-link" id="open-shop">В лавку →</button></div><div class="shop-preview" id="shop-preview"></div><div class="inventory-line"><span>МОЙ РЮКЗАЧОК</span><b id="inventory-count">0 вещей</b><button id="inventory-btn" aria-label="Инвентарь">▤</button></div></article></section>
+      <footer class="footer-note"><span>С любовью в каждом пикселе <b>♡</b></span><div><button id="save-btn">Сохранение</button><button id="backup-btn">Резервная копия</button></div></footer>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status"></div><div class="modal-backdrop hidden" id="modal-backdrop"><section class="modal" id="modal" role="dialog" aria-modal="true"></section></div><input type="file" id="import-file" accept="application/json,.json" hidden>
+  <script type="module" src="./src/main.js"></script>
+</body></html>
